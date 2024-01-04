@@ -1,6 +1,6 @@
 import argparse
 
-from phoneutria import Chelicera
+from phoneutria.__main__ import Chelicera
 
 
 def make_get(url, extract):
