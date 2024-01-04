@@ -7,3 +7,4 @@ __js_url__ = None
 import os
 
 from phoneutria.version import __version__
+from phoneutria.__main__ import Chelicera
