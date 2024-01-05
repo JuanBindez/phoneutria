@@ -22,6 +22,10 @@ Python 3 library providing security testing capabilities for webservers, enablin
 
 ## Command line usage:
 
+### Google Hacking:
+
+    phoneutria --google_hacking access.logs
+
 ### To make a POST request:
 
     phoneutria -t https://api.example.com --post "key1=value1&key2=value2"

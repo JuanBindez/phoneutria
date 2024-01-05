@@ -8,6 +8,6 @@ API
 Chelicera Object
 --------------
 
-.. autoclass:: 
+.. autoclass:: Chelicera
    :members:
    :inherited-members:

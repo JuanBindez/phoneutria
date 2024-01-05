@@ -3,6 +3,12 @@
 Command-line interface (CLI)
 =============================
 
+Google Hacking:
+
+.. code:: bash
+
+    $ phoneutria --google_hacking access.logs
+
 
 To make a POST request:
 
