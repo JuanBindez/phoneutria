@@ -50,6 +50,7 @@ class Chelicera:
                         else:
                             print(f"Field '{key}' not found in the response.")
                 except json.JSONDecodeError as e:
+                    
                     print(f"Error decoding JSON response: {e}")
             else:
                 print(response.text)

@@ -1,12 +1,14 @@
 import argparse
 
 from phoneutria.__main__ import Chelicera
+from phoneutria.google_hacking import google_search
 
 def main():
     parser = argparse.ArgumentParser(description="Script to test webservers with GET and POST requests.")
     parser.add_argument("-t", "--url", help="URL of the webservice")  # Corrected argument name
     parser.add_argument("--post", help="Data for POST request (format: key1=value1&key2=value2)")
     parser.add_argument("--get", nargs="+", help="Extract specific data from the response (only for GET requests)")
+    parser.add_argument("--google_Hacking", nargs="+", help="Extract specific data from the response (only for GET requests)")
 
     args = parser.parse_args()
 
@@ -16,8 +18,14 @@ def main():
         if "csrf_token" not in post_data:
             print("CSRF token not found in POST data. Possible CSRF vulnerability.")
         make_post(args.url, post_data)  # Corrected function call
+
+    elif args.google_Hacking:
+        query = "intitle:\"Index of\" inurl:", + google_search
+        google_search(query)
+
     else:
         make_get(args.url, args.get)
+    
 
 
 def make_get(url, extract):

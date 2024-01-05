@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "phoneutria"
-version = "1.0-rc7"
+version = "1.0-rc8"
 authors = [
   { name="Juan Bindez", email="juanbindez780@gmail.com" },
 ]
@@ -32,7 +32,7 @@ classifiers = [
 	"Topic :: Terminals",
 	"Topic :: Utilities",
 ]
-dependencies = ['requests']
+dependencies = ['requests' , 'googlesearch-python']
 
 [project.urls]
 "Homepage" = "https://github.com/juanbindez/phoneutria"
