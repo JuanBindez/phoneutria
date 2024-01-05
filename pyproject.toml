@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "phoneutria"
-version = "1.0-rc15"
+version = "1.0-rc16"
 authors = [
   { name="Juan Bindez", email="juanbindez780@gmail.com" },
 ]
@@ -12,7 +12,7 @@ description = "Python 3 library providing security testing capabilities for webs
 readme = "README.md"
 requires-python = ">=3.7"
 license = {text = "GPLv2 license"}
-keywords = ["web", "GET", "POST", "tools", "cli", "scan",]
+keywords = ["Google Hacking", "GET", "POST", "tools", "cli", "scan",]
 classifiers = [
 	"Development Status :: 5 - Production/Stable",
 	"Environment :: Console",
