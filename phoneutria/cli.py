@@ -8,7 +8,7 @@ def main():
     parser.add_argument("-t", "--url", help="URL of the webservice")  # Corrected argument name
     parser.add_argument("--post", help="Data for POST request (format: key1=value1&key2=value2)")
     parser.add_argument("--get", nargs="+", help="Extract specific data from the response (only for GET requests)")
-    parser.add_argument("--google_Hacking", nargs="+", help="Extract specific data from the response (only for GET requests)")
+    parser.add_argument("--google_hacking", nargs="+", help="Extract specific data from the response (only for GET requests)")
 
     args = parser.parse_args()
 
@@ -20,7 +20,7 @@ def main():
         make_post(args.url, post_data)  # Corrected function call
 
     elif args.google_Hacking:
-        query = "intitle:\"Index of\" inurl:", + google_search
+        query = "intitle:\"Index of\" inurl:" + google_search
         google_search(query)
 
     else:
