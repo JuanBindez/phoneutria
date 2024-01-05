@@ -19,7 +19,7 @@ def main():
             print("CSRF token not found in POST data. Possible CSRF vulnerability.")
         make_post(args.url, post_data)  # Corrected function call
 
-    elif args.google_Hacking:
+    elif args.google_hacking:
         query = "intitle:\"Index of\" inurl:" + google_search
         google_search(query)
 
