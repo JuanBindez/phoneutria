@@ -20,7 +20,7 @@ def main():
         make_post(args.url, post_data)  # Corrected function call
 
     elif args.google_hacking:
-        query = "intitle:\"Index of\" inurl:" + google_search
+        query = "intitle:\"Index of\" inurl:" + args.google_hacking
         google_search(query)
 
     else:
