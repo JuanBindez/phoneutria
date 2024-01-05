@@ -29,6 +29,7 @@ class Chelicera:
         try:
             response = requests.get(self.url)
             print(f"GET {self.url} - Status Code: {response.status_code}")
+            print(response.text)
 
             # Verificação de XSS
             if "<script>" in response.text:
