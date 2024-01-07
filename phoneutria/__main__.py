@@ -26,11 +26,12 @@ class Chelicera:
         self.url = url
 
     def make_get_words(self, target_word):
+        word = str(target_word)
         response = requests.get(self.url)
 
         if response.status_code == 200:
             # Encontra todas as ocorrências da palavra-alvo usando expressões regulares
-            occurrences = re.findall(target_word, response.text, flags=re.IGNORECASE)
+            occurrences = re.findall(word, response.text, flags=re.IGNORECASE)
 
             for occurrence in occurrences:
                 print(f'Ocorrência da palavra "{target_word}": {occurrence}')
