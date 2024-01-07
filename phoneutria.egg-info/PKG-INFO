@@ -1,0 +1,68 @@
+Metadata-Version: 2.1
+Name: phoneutria
+Version: 1.0rc19
+Summary: Python 3 library providing security testing capabilities for webservers, enabling GET and POST requests, and incorporating checks against common vulnerabilities such as XSS, SQL Injection, and CSRF.
+Author-email: Juan Bindez <juanbindez780@gmail.com>
+License: GPLv2 license
+Project-URL: Homepage, https://github.com/juanbindez/phoneutria
+Project-URL: Bug Reports, https://github.com/juanbindez/phoneutria/issues
+Project-URL: Read the Docs, http://phoneutria.readthedocs.io/
+Keywords: Google Hacking,GET,POST,tools,cli,scan
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Terminals
+Classifier: Topic :: Utilities
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: googlesearch-python
+
+# phoneutria
+
+![PyPI - Downloads](https://img.shields.io/pypi/dm/phoneutria)
+![PyPI - License](https://img.shields.io/pypi/l/phoneutria)
+![PyPI - Version](https://img.shields.io/pypi/v/phoneutria)
+
+## Description
+
+Python 3 library providing security testing capabilities for webservers, enabling GET and POST requests, and incorporating checks against common vulnerabilities such as XSS, SQL Injection, and CSRF.
+
+
+## install:
+
+    pip install phoneutria
+
+-----------------
+
+## install in ubuntu:
+
+    pip install phoneutria --break-system-packages
+----------
+
+## Command line usage:
+
+### Google Hacking:
+
+    phoneutria -gh access.logs
+
+### Occurrence of the word in website:
+
+    phoneutria -t https://api.example.com -w word
+
+### To make a GET request of the all links in website:
+
+    phoneutria -t https://api.example.com --links

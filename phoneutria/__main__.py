@@ -28,16 +28,19 @@ class Chelicera:
     def make_get_words(self, target_word):
             response = requests.get(self.url)
         
-            #occurrences = re.findall(fr'\b{target_word}\b', response.text, flags=re.IGNORECASE)
-            occurrences = re.findall(target_word, response.text, flags=re.IGNORECASE)
+            target_words = [target_word]
 
-            for occurrence in occurrences:
-                print(f'Occurrence of the word "{target_word}": {occurrence}')
+            if response.status_code == 200:
+                for target_word in target_words:
+                    # Find all occurrences of the target word using regular expressions
+                    occurrences = re.findall(target_word, response.text, flags=re.IGNORECASE)
+
+                    for occurrence in occurrences:
+                        print(f'Occurrence of the word "{target_word}": {occurrence}')
             else:
                 print(f"Request failed with status code {response.status_code}")
-
-    def make_get_links(self):
-        response = requests.get(self.url)
+                def make_get_links(self):
+                    response = requests.get(self.url)
 
         if response.status_code == 200:
             links = re.findall(r'<a href="(.*?)".*?>(.*?)</a>', response.text)

@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+phoneutria/__init__.py
+phoneutria/__main__.py
+phoneutria/banner.py
+phoneutria/cli.py
+phoneutria/colors.py
+phoneutria/google_hacking.py
+phoneutria/version.py
+phoneutria.egg-info/PKG-INFO
+phoneutria.egg-info/SOURCES.txt
+phoneutria.egg-info/dependency_links.txt
+phoneutria.egg-info/entry_points.txt
+phoneutria.egg-info/requires.txt
+phoneutria.egg-info/top_level.txt

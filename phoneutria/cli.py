@@ -14,9 +14,8 @@ def main():
     args = parser.parse_args()
 
     if args.w:
-        words = [args.w]
         ch = Chelicera(args.url)
-        ch.make_get_words(words)
+        ch.make_get_words(args.w)
 
     elif args.links:
         ch = Chelicera(args.url)

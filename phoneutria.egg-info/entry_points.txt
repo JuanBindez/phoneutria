@@ -1,0 +1,2 @@
+[console_scripts]
+phoneutria = phoneutria.cli:main
