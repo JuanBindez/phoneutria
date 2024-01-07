@@ -30,13 +30,13 @@ class Chelicera:
         response = requests.get(self.url)
 
         if response.status_code == 200:
-            # Encontra todas as ocorrências da palavra-alvo usando expressões regulares
+            
             occurrences = re.findall(word, response.text, flags=re.IGNORECASE)
 
             for occurrence in occurrences:
-                print(f'Ocorrência da palavra "{target_word}": {occurrence}')
+                print(f'Occurrence of the word "{target_word}": {occurrence.start()}')
         else:
-            print(f"A solicitação falhou com o código de status {response.status_code}")
+            print(f"Request failed with status code {response.status_code}")
 
         
             
