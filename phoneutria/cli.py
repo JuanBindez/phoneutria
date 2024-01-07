@@ -8,7 +8,7 @@ def main():
     parser = argparse.ArgumentParser(description="Script to test webservers with GET and POST requests.")
     parser.add_argument("-t", "--url", help="URL of the webservice")
     parser.add_argument("-w", nargs="+", help="Extract specific data from the response (only for GET requests)")
-    parser.add_argument("--links", help="get links in html")
+    parser.add_argument("-l", "--links", help="get links in html")
     parser.add_argument("-gh", nargs="+", help="google_hacking")
 
     args = parser.parse_args()
