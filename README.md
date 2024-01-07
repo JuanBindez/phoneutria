@@ -30,7 +30,6 @@ Python 3 library providing security testing capabilities for webservers, enablin
 
     phoneutria -t https://api.example.com --post "key1=value1&key2=value2"
 
-
 ### To make a GET request:
 
     phoneutria -t https://api.example.com --get name email
