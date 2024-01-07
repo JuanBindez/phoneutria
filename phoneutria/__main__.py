@@ -27,8 +27,11 @@ class Chelicera:
 
     def make_get_words(self, target_word):
             response = requests.get(self.url)
-        
+
             target_words = [target_word]
+
+            # Make a GET request to the website
+            response = requests.get(self.url)
 
             if response.status_code == 200:
                 for target_word in target_words:
@@ -39,8 +42,10 @@ class Chelicera:
                         print(f'Occurrence of the word "{target_word}": {occurrence}')
             else:
                 print(f"Request failed with status code {response.status_code}")
-                def make_get_links(self):
-                    response = requests.get(self.url)
+        
+            
+    def make_get_links(self):
+        response = requests.get(self.url)
 
         if response.status_code == 200:
             links = re.findall(r'<a href="(.*?)".*?>(.*?)</a>', response.text)
