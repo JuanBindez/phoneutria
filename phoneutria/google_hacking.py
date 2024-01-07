@@ -10,4 +10,4 @@ def google_search(query, num_results=50):
 
     except Exception as e:
         print("phoneutria")
-        print(f"Erro ao realizar a pesquisa: {e}")
+        print(f"Error performing the search: {e}")
