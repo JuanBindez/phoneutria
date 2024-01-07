@@ -26,22 +26,17 @@ class Chelicera:
         self.url = url
 
     def make_get_words(self, target_word):
-            response = requests.get(self.url)
+        response = requests.get(self.url)
 
-            target_words = [target_word]
+        if response.status_code == 200:
+            # Encontra todas as ocorrências da palavra-alvo usando expressões regulares
+            occurrences = re.findall(target_word, response.text, flags=re.IGNORECASE)
 
-            # Make a GET request to the website
-            response = requests.get(self.url)
+            for occurrence in occurrences:
+                print(f'Ocorrência da palavra "{target_word}": {occurrence}')
+        else:
+            print(f"A solicitação falhou com o código de status {response.status_code}")
 
-            if response.status_code == 200:
-                for target_word in target_words:
-                    # Find all occurrences of the target word using regular expressions
-                    occurrences = re.findall(target_word, response.text, flags=re.IGNORECASE)
-
-                    for occurrence in occurrences:
-                        print(f'Occurrence of the word "{target_word}": {occurrence}')
-            else:
-                print(f"Request failed with status code {response.status_code}")
         
             
     def make_get_links(self):
