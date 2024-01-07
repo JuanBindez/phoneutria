@@ -1,6 +1,6 @@
 from googlesearch import search
 
-def google_search(query, num_results=50):
+def google_search(query, num_results=15):
     try:
         results = search(query, num_results=num_results)
 
