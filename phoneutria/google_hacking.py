@@ -9,5 +9,5 @@ def google_search(query, num_results=15):
             print(f"{i}. {result}")
 
     except Exception as e:
-        print("phoneutria")
+        print("phoneutria\n")
         print(f"Error performing the search: {e}")

@@ -24,12 +24,12 @@ Python 3 library providing security testing capabilities for webservers, enablin
 
 ### Google Hacking:
 
-    phoneutria --google_hacking access.logs
+    phoneutria -gh access.logs
 
-### To make a POST request:
+### Occurrence of the word in website:
 
-    phoneutria -t https://api.example.com --post "key1=value1&key2=value2"
+    phoneutria -t https://api.example.com -w word
 
-### To make a GET request:
+### To make a GET request of the all links in website:
 
-    phoneutria -t https://api.example.com --get name email
+    phoneutria -t https://api.example.com --links

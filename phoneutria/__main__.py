@@ -16,7 +16,7 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 
 
-
+import re
 import requests
 import json
 
@@ -25,42 +25,25 @@ class Chelicera:
     def __init__(self, url):
         self.url = url
 
-    def make_get_request(self, extract_data=None):
-        try:
+    def make_get_words(self, target_word):
             response = requests.get(self.url)
-            print(f"GET {self.url} - Status Code: {response.status_code}")
-            print(response.text)
+        
+            occurrences = re.findall(fr'\b{target_word}\b', response.text, flags=re.IGNORECASE)
 
-            # Verificação de XSS
-            if "<script>" in response.text:
-                print("Possible XSS detected in response.")
-
-            if extract_data:
-                try:
-                    response_json = response.json()
-
-                    # Verificação de SQL Injection
-                    for key in extract_data:
-                        if key in response_json:
-                            value = response_json[key]
-                            if isinstance(value, str) and "'" in value:
-                                print(f"Possible SQL Injection detected in field '{key}'.")
-
-                            print(f"{key}: {value}")
-                        else:
-                            print(f"Field '{key}' not found in the response.")
-                except json.JSONDecodeError as e:
-                    
-                    print(f"Error decoding JSON response: {e}")
+            for occurrence in occurrences:
+                print(f'Occurrence of the word "{target_word}": {occurrence}')
             else:
-                print(response.text)
-        except requests.exceptions.RequestException as e:
-            print(f"Error making GET request: {e}")
+                print(f"Request failed with status code {response.status_code}")
 
-    def make_post_request(self, data):
-        try:
-            response = requests.post(self.url, data=data)
-            print(f"POST {self.surl} - Status Code: {response.status_code}")
-            print(response.text)
-        except requests.exceptions.RequestException as e:
-            print(f"Error making POST request: {e}")
+    def make_get_links(self):
+        response = requests.get(self.url)
+
+        if response.status_code == 200:
+            links = re.findall(r'<a href="(.*?)".*?>(.*?)</a>', response.text)
+
+            for link in links:
+                url, text = link
+                print(f'Link: {url} - Text: {text}')
+        else:
+            print(f"Request failed with status code {response.status_code}")
+                
