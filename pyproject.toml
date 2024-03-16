@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "phoneutria"
-version = "1.0-rc25"
+version = "1.0-rc26"
 authors = [
   { name="Juan Bindez", email="juanbindez780@gmail.com" },
 ]

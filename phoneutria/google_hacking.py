@@ -1,8 +1,8 @@
 from googlesearch import search
 
-def google_search(query, num_results=15):
+def google_search(query):
     try:
-        results = search(query, num_results=num_results)
+        results = search(query, sleep_interval=5, num_results=100)
 
         for i, result in enumerate(results, 1):
             print("phoneutria")
