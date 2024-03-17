@@ -2,7 +2,7 @@ from googlesearch import search
 
 def google_search(query):
     try:
-        results = search(query, sleep_interval=5, num_results=100, pause=10.0)
+        results = search(query, sleep_interval=10, num_results=100)
 
         for i, result in enumerate(results, 1):
             print("phoneutria")
