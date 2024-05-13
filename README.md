@@ -16,11 +16,6 @@ Python 3 library providing security testing capabilities for webservers.
 
 -----------------
 
-## install in ubuntu:
-
-    pip install phoneutria --break-system-packages
-----------
-
 ## Command line usage:
 
 ### Google Hacking:
